@@ -36,7 +36,8 @@ function XXmerge(o, ob) {
 }
 
 function getChartDate(date) {
-    return moment(date).format();
+
+    return moment(date,"YYYY-MM-DD'T'hh:mm:ss").format();
 }
 
 function getUIDate(date) {
