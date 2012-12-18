@@ -6,7 +6,7 @@ body {
 }
 
 #wrap {
-    width:960px;
+    width: 960px;
     margin: 0 auto;
 }
 
@@ -55,10 +55,29 @@ h3 {
     width: 30%;
 }
 
+#notificationpanel {
+    min-height: 300px;
+}
+
 
 #chartparametercontainer {
     padding: 4px;
     width: 100%;
+}
+
+#newnotification {
+    padding: 4px;
+    width: 45%;
+}
+
+#recentnotifications {
+    float: right;
+    padding: 4px;
+    width: 45%;
+}
+
+.formlabel {
+    width: 100px;
 }
 
 #graphdiv {
@@ -95,6 +114,11 @@ h3 {
     .notificationcontainer h3 {
         color: #c0504d;
         /*background-color: rgba(192, 80, 77, 0.20);*/
+    }
+
+    .notificationcontainer table {
+        background-color: rgba(192, 80, 77, 0.20);
+        padding:4px;
     }
 
 #notificationtypes {

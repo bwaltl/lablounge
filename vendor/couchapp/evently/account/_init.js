@@ -1,6 +1,6 @@
 function() {
   var elem = $(this);
-  $$(this).userCtx = null;
+  $("body").data.userCtx = null;
   $.couch.session({
     success : function(r) {
       var userCtx = r.userCtx;

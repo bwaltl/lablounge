@@ -62,8 +62,11 @@
     <Content Include="evently\main\deviceselected\async.js" />
     <Content Include="evently\main\deviceselected\data.js" />
     <Content Include="evently\main\deviceselected\mustache.html" />
+    <Content Include="evently\main\notificationtypeselected\async.js" />
     <Content Include="evently\main\notificationtypeselected\data.js" />
     <Content Include="evently\main\notificationtypeselected\mustache.html" />
+    <Content Include="evently\main\notificationtypeselected\selectors\a\click.js" />
+    <Content Include="evently\main\notificationtypeselected\selectors\input.notificationSubmit\click.js" />
     <Content Include="evently\main\_init\mustache.html" />
     <Content Include="evently\notificationtypes\_init\data.js" />
     <Content Include="evently\notificationtypes\_init\mustache.html" />
@@ -117,6 +120,7 @@
     <Content Include="vendor\couchapp\_attachments\jquery.pathbinder.js" />
     <Content Include="vendor\couchapp\_attachments\loader.js" />
     <Content Include="vendor\couchapp\_attachments\moment.min.js" />
+    <Content Include="views\notifications\map.js" />
     <Content Include="views\dataentries\map.js" />
     <Content Include="views\notificationtypes\reduce.js" />
     <Content Include="views\notificationtypes\map.js" />

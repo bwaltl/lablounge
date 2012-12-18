@@ -1,1 +1,33 @@
-<div class="notificationcontainer"><h3>{{devicetype}}</h3></div>
+<div class="notificationcontainer" id="notificationpanel">
+    <h3>{{devicetype}}</h3>
+    <div id="recentnotifications">
+        <h4>Recent notifications</h4>
+        <ul>
+            {{#notifications}}
+  <li><a href="#{{data}}" alt="{{devicetypes}}"><b>{{data}}</b> (for {{devicetypes}})</a>, at {{timestamp}}</li>
+            {{/notifications}}
+        </ul>
+    </div>
+    <div id="newnotification">
+        <h4>Submit new notification</h4>
+        <table>
+            <tr>
+                <td>Data</td>
+                <td>
+                    <input type="text" id="notificationDataField" /></td>
+            </tr>
+            <tr>
+                <td>Device types</td>
+                <td>
+                    <input type="text" id="deviceTypesDataField" value="{{devicetype}}" /></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="notificationSubmit" value="Submit notification" /></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
