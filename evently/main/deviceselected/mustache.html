@@ -1,0 +1,19 @@
+<div class="datacontainer">
+    <h3>{{source}}</h3>
+    <div id="chartparametercontainer">
+    </div>
+
+    <div id="graphdiv"></div>
+
+
+
+
+</div>
+<script type="text/javascript">
+    g = new Dygraph(
+      document.getElementById("graphdiv"),
+      "Date,Value\n{{#entries}}{{key}},{{value}}\n{{/entries}}",
+        {
+            xValueFormatter: getUIDate
+        });
+</script>

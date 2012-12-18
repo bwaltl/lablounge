@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab LOUNGE</title>
+    <link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.ico" />
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <link rel="stylesheet" href="style/jquery-ui-1.9.2.custom.min.css" type="text/css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="account" class="accountcontainer"></div>
+
+        <div id="titlebar">
+            <a href="index.html">
+                <img src="style/images/LabLoungeTitle.png" id="titlelogo" alt="lab lounge logo" /></a>
+        </div>
+
+        <hr />
+        <!--    <div id="profile"></div>-->
+        <div id="main"></div>
+
+        <div id="sidebar">
+            <div id="registereddevices" class="datacontainer"></div>
+            <div id="notificationtypes" class="notificationcontainer"></div>
+        </div>
+    </div>
+</body>
+<script src="vendor/couchapp/loader.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $.couch.app(function (app) {
+        $("#account").evently("account", app);
+        $("#main").evently("main", app);
+        $("#registereddevices").evently("devices", app);
+        $("#notificationtypes").evently("notificationtypes", app);
+
+        $.evently.connect("#registereddevices", "#main", ["deviceselected"]);
+        $.evently.connect("#notificationtypes", "#main", ["notificationtypeselected"]);
+
+    });
+</script>
+<script src="logic.js"></script>
+</html>

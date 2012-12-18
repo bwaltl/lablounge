@@ -1,0 +1,9 @@
+1>------ Build started: Project: lablounge, Configuration: Debug Any CPU ------
+1>  lablounge -> D:\couchApps\repos\lablounge\bin\Debug\ClassLibrary.dll
+1>  2012-12-17 11:51:20 [WARNING] lablounge is already in properties. Can't add (lablounge.sln)
+1>  2012-12-17 11:51:20 [WARNING] D:\couchApps\repos\lablounge\lablounge.v11.suo isn't encoded in utf8
+1>  2012-12-17 11:51:20 [WARNING] plan B didn't work, D:\couchApps\repos\lablounge\lablounge.v11.suo is a binary
+1>  2012-12-17 11:51:20 [WARNING] use plan C: encode to base64
+1>  2012-12-17 11:51:20 [INFO] Visit your CouchApp here:
+1>  http://localhost:5984/lablounge/_design/labLounge/index.html
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
