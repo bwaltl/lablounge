@@ -1,7 +1,8 @@
 <div class="notificationcontainer" id="notificationpanel">
-    <h3>{{devicetype}}</h3>
+    <h3>{{title}}</h3>
     <div id="recentnotifications">
         <h4>Recent notifications</h4>
+        {{emptycase}}
         <ul>
             {{#notifications}}
   <li><a href="#{{data}}" alt="{{devicetypes}}"><b>{{data}}</b> (for {{devicetypes}})</a>, at {{timestamp}}</li>
