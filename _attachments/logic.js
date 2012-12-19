@@ -37,7 +37,7 @@ function onDBChange(data) {
             });
             
         }
-        else if ($("body").data.selectednotificationtype != "" && id.indexOf("notification_") == 0) {
+        else if (id.indexOf("notification_") == 0) {
             $.log("Change: " + id);
             $('#notificationChangedAlert').show();
 
