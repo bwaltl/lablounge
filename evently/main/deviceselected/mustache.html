@@ -5,7 +5,6 @@
     <div id="graphdiv"></div>
 
     <div id="chartparametercontainer">
-        
     </div>
 
 
@@ -15,6 +14,6 @@
       document.getElementById("graphdiv"),
       "Date,Value\n{{#entries}}{{key}},{{value}}\n{{/entries}}",
         {
-            xValueFormatter: getUIDate
+            axes: { x: { valueFormatter: getUIDate } }
         });
 </script>

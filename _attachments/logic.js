@@ -36,10 +36,10 @@ function XXmerge(o, ob) {
 }
 
 function getChartDate(date) {
-
-    return moment(date,"YYYY-MM-DD'T'hh:mm:ss").format();
+    //alert(date + " >> " + moment(date, "YYYY-MM-DD'T'hh:mm:ss").format());
+    return moment(date).format();
 }
 
 function getUIDate(date) {
-    return moment(date, "YYYY-MM-DD'T'hh:mm:ss").format('L');
+    return moment(date).format("MM/DD/YYYY hh:mm:ss");
 }
