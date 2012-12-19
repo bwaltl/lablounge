@@ -41,5 +41,5 @@ function getChartDate(date) {
 }
 
 function getUIDate(date) {
-    return moment(date).format('L');
+    return moment(date, "YYYY-MM-DD'T'hh:mm:ss").format('L');
 }
