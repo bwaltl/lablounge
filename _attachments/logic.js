@@ -2,6 +2,7 @@
 $appname = "labLounge";
 $db = $.couch.db($dbname);
 $db.changes().onChange(onDBChange);
+$maxChartData = 100;
 
 $("body").data = {
     "selecteddevice": "",
@@ -24,6 +25,10 @@ function onDBChange(data) {
         if ($("body").data.selecteddevice != "" && id.indexOf("data_") == 0) {
             $.log("Change: " + id);
             doView("allentries", { key: id }, function (data) {
+                if ($("body").data.chartData.length >= $maxChartData) {
+                    $("body").data.chartData.splice(0, 1);
+                }
+
                 $("body").data.chartData.push({
                     key: getChartDate(data.rows[0].value.timestamp),
                     value: data.rows[0].value.data
