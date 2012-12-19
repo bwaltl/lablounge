@@ -4,7 +4,7 @@
         {{emptycase}}
         <ul>
             {{#notifications}}
-  <li><a href="#{{data}}" alt="{{devicetypes}}"><b>{{data}}</b> (for {{devicetypes}})</a>, at {{timestamp}}</li>
+  <li><a href="#{{data}}" alt="{{devicetypes}}" class="notificationSelect"><b>{{data}}</b> (for {{devicetypes}})</a>, at {{timestamp}}</li>
             {{/notifications}}
         </ul>
     </div>
@@ -30,6 +30,9 @@
                     <input type="submit" class="notificationSubmit" value="Submit notification" /></td>
             </tr>
         </table>
+        <div id="notificationChangedAlert" style="display:none;">
+            A new notification was submitted by. Click <a href="#reload" class="reload">here</a> to reload this form.
+        </div>
     </div>
 
 </div>

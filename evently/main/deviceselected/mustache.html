@@ -10,10 +10,25 @@
 
 </div>
 <script type="text/javascript">
-    g = new Dygraph(
-      document.getElementById("graphdiv"),
-      "Date,Value\n{{#entries}}{{key}},{{value}}\n{{/entries}}",
-        {
-            axes: { x: { valueFormatter: getUIDate } }
-        });
+
+
+    function loadChart() {
+        
+        csv = "Date,Value\n";
+        chartData = $("body").data.chartData;
+
+        $.log("Chart: " + chartData.length);
+
+
+        for (var i = 0; i < chartData.length; i++) {
+            csv = csv + chartData[i].key + "," + chartData[i].value + "\n";
+        }
+
+        var g = new Dygraph(document.getElementById("graphdiv"), csv,
+       {
+           axes: { x: { valueFormatter: getUIDate } }
+       });
+    }
+
+    loadChart();
 </script>

@@ -7,5 +7,7 @@ function(viewdata) {
         rows.push({key:getChartDate(row.key[1]), value:row.value});
     }
 
-    return {source: $("body").data.selecteddevice, entries: rows};
+    $("body").data.chartData = rows;
+
+    return {source: $("body").data.selecteddevice};
 }

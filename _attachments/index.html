@@ -34,8 +34,9 @@
         $("#notificationtypes").evently("notificationtypes", app);
 
         $.evently.connect("#registereddevices", "#main", ["deviceselected"]);
+        $.evently.connect("#registereddevices", "#main", ["notificationtypeselected"]);
+        $.evently.connect("#notificationtypes", "#main", ["deviceselected"]);
         $.evently.connect("#notificationtypes", "#main", ["notificationtypeselected"]);
-
     });
 </script>
 <script src="logic.js"></script>

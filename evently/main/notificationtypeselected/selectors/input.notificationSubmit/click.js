@@ -1,18 +1,21 @@
 function() {
-    var notification =
-        {
-            source : "",
-            devicetypes : $('#deviceTypesDataField').val().split(","),
-            response : false,
-            type:"notification",
-            timestamp : moment()._d,
-            data: $('#notificationDataField').val()
-        };
-
+    source = "";
+    id= "notification_" + source + getIdTimestamp();
     if( $("body").data.userCtx)
     {
-        notification.source= $("body").data.userCtx.name;
+        source= $("body").data.userCtx.name;
     }
+
+    var notification =
+        {
+            source : source,
+            types : $('#deviceTypesDataField').val().split(","),
+            response : false,
+            timestamp : getCouchDBTimestamp(),
+            data: $('#notificationDataField').val(),
+            _id: id
+        };
+
 
     //alert(JSON.stringify(notification));
 
@@ -20,7 +23,8 @@ function() {
         {
             async:false,
             success:function(data){
-                alert("Successfully submitted notification");
+                $("body").data.lastInsertedNotificationId = data.id;
+                $(this).trigger('notificationtypeselected');
             },
             error:function(ex){
                 alert("Cannot save " + JSON.stringify(notification));
