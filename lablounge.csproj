@@ -130,9 +130,11 @@
     <Content Include="views\dataprovidingdevices\reduce.js" />
     <Content Include="_attachments\index.html" />
     <Content Include="_attachments\logic.js" />
+    <Content Include="_attachments\style\images\diagram.png" />
     <Content Include="_attachments\style\images\favicon.ico" />
     <Content Include="_attachments\style\images\LabLoungeIcon.png" />
     <Content Include="_attachments\style\images\LabLoungeTitle.png" />
+    <Content Include="_attachments\style\images\notification.png" />
     <Content Include="_attachments\style\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="_attachments\style\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="_attachments\style\images\ui-bg_glass_75_d0e5f5_1x400.png" />

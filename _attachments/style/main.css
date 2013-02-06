@@ -30,6 +30,10 @@ h3 {
     background-color: rgba(0, 128, 0, 0.20);
 }
 
+.subtitleicon {
+    float: left;
+    margin-right: 10px;
+}
 
 #titlelogo {
     float: left;
@@ -53,6 +57,7 @@ h3 {
     padding: 4px;
     float: right;
     width: 30%;
+    background-color:#e5e5e5;
 }
 
 #notificationpanel {
@@ -81,7 +86,7 @@ h3 {
 }
 
 #graphdiv {
-    width: 100%;
+    
 }
 
 .datacontainer {
@@ -160,7 +165,7 @@ ul {
 }
 
 li {
-    background: #fff;
+    /*background: #fff;*/
     padding: 4px;
     margin: 4px 0;
 }
