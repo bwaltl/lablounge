@@ -62,6 +62,9 @@
     <Content Include="evently\main\deviceselected\async.js" />
     <Content Include="evently\main\deviceselected\data.js" />
     <Content Include="evently\main\deviceselected\mustache.html" />
+    <Content Include="evently\main\deviceselected\selectors\a.pause\click.js" />
+    <Content Include="evently\main\deviceselected\selectors\a.play\click.js" />
+    <Content Include="evently\main\deviceselected\selectors\a.screenshot\click.js" />
     <Content Include="evently\main\notificationtypeselected\async.js" />
     <Content Include="evently\main\notificationtypeselected\data.js" />
     <Content Include="evently\main\notificationtypeselected\mustache.html" />
@@ -109,6 +112,7 @@
     <Content Include="vendor\couchapp\lib\redirect.js" />
     <Content Include="vendor\couchapp\lib\utils.js" />
     <Content Include="vendor\couchapp\lib\validate.js" />
+    <Content Include="vendor\couchapp\_attachments\dygraph-extra.js" />
     <Content Include="vendor\couchapp\_attachments\json2.js" />
     <Content Include="vendor\couchapp\_attachments\dygraph-combined.js" />
     <Content Include="vendor\couchapp\_attachments\jquery-1.8.3.js" />
@@ -133,8 +137,13 @@
     <Content Include="_attachments\style\images\diagram.png" />
     <Content Include="_attachments\style\images\favicon.ico" />
     <Content Include="_attachments\style\images\LabLoungeIcon.png" />
+    <Content Include="_attachments\style\images\LabLoungeIcon2.png" />
     <Content Include="_attachments\style\images\LabLoungeTitle.png" />
+    <Content Include="_attachments\style\images\LabLoungeTitle2.png" />
     <Content Include="_attachments\style\images\notification.png" />
+    <Content Include="_attachments\style\images\pause.png" />
+    <Content Include="_attachments\style\images\play.png" />
+    <Content Include="_attachments\style\images\screenshot.png" />
     <Content Include="_attachments\style\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="_attachments\style\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="_attachments\style\images\ui-bg_glass_75_d0e5f5_1x400.png" />

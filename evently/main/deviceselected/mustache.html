@@ -1,35 +1,84 @@
 <div class="datacontainer">
-    <h3>{{source}}</h3>
-
-
-    <div id="graphdiv"></div>
+    <h2>{{source}}</h2>
 
     <div id="chartparametercontainer">
-        
+        <div id="playstate" style="display: normal; margin: 10px;">
+            <table border="0">
+                <tr>
+                    <td>
+                        <a href="#pause" class="pause">
+                            <img border="0" id="pauseimg" src="style/images/pause.png" title="Pause live update to make a snapshot of the chart" class="graphimg" /></a></td>
+                    <td class="pausedescription">Pause live update to make a snapshot of the chart</td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div id="pausestate" style="display: none; margin: 10px;">
+            <table border="0">
+                <tr>
+                    <td><a href="#play" class="play">
+                        <img border="0" src="style/images/play.png" title="Continue live update" id="playimg" class="graphimg" /></a></td>
+                    <td class="playdescription">Continue live update</td>
+                    <td></td>
+                    <td><a href="#screenshot" class="screenshot">
+                        <img border="0" src="style/images/screenshot.png" title="Save the current chart" id="screenshotimg" class="graphimg" /></a></td>
+                    <td class="screenshotdescription">Save the current chart</td>
+                </tr>
+            </table>
+
+
+
+        </div>
+    </div>
+    <div id="graphdiv"></div>
+
+    <div id="dialog" title="Snapshot">
+        <p style="margin:3px;">To save the snapshot, right-click this image and choose <em>Save image as...</em> (Depending on your browser, this text may vary a little bit).</p>
+        <hr />
+        <img id="graphsnapshot" src="style/images/play.png" />
     </div>
 
 
 </div>
 <script type="text/javascript">
 
-
+    var chart;
     function loadChart() {
-        
+
         csv = "Date,Value\n";
         chartData = $("body").data.chartData;
 
-        $.log("Chart: " + chartData.length);
-
-
+        
         for (var i = 0; i < chartData.length; i++) {
             csv = csv + chartData[i].key + "," + chartData[i].value + "\n";
         }
 
-        var g = new Dygraph(document.getElementById("graphdiv"), csv,
+        chart = new Dygraph(document.getElementById("graphdiv"), csv,
        {
            axes: { x: { valueFormatter: getUIDate } }
        });
     }
 
-    loadChart();
+
+
+    $(function () {
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            show: {
+                effect: "explode",
+                duration: 500
+            },
+            hide: {
+                effect: "explode",
+                duration: 500
+            },
+            width: 550,
+            height: 500,
+            dialogClass: dialog
+        });
+
+        loadChart();
+    });
 </script>

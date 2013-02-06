@@ -6,7 +6,8 @@ $maxChartData = 100;
 
 $("body").data = {
     "selecteddevice": "",
-    "selectednotificationtype": ""
+    "selectednotificationtype": "",
+    "liveupdate":true
 };
 
 
@@ -21,24 +22,27 @@ function onDBChange(data) {
     
     for (var i = 0; i < changedDocs.length; i++) {
         id = changedDocs[i].id.toString();
-        $.log("device: " + $("body").data.selecteddevice);
+       
         if ($("body").data.selecteddevice != "" && id.indexOf("data_") == 0) {
-            $.log("Change: " + id);
-            doView("allentries", { key: id }, function (data) {
-                
-                if (data.rows[0].value.source == $("body").data.selecteddevice) {
-                    if ($("body").data.chartData.length >= $maxChartData) {
-                        $("body").data.chartData.splice(0, 1);
-                    }
 
-                    $("body").data.chartData.push({
-                        key: getChartDate(data.rows[0].value.timestamp),
-                        value: data.rows[0].value.data
-                    });
-                    loadChart();
-                }
-            });
-            
+            if ($("body").data.liveupdate) {
+
+                $.log("Change: " + id);
+                doView("allentries", { key: id }, function (data) {
+
+                    if (data.rows[0].value.source == $("body").data.selecteddevice) {
+                        if ($("body").data.chartData.length >= $maxChartData) {
+                            $("body").data.chartData.splice(0, 1);
+                        }
+
+                        $("body").data.chartData.push({
+                            key: getChartDate(data.rows[0].value.timestamp),
+                            value: data.rows[0].value.data
+                        });
+                        loadChart();
+                    }
+                });
+            }
         }
         else if (id.indexOf("notification_") == 0) {
             $.log("Change: " + id);
@@ -47,6 +51,16 @@ function onDBChange(data) {
         }
     }
     
+}
+
+function startLiveUpdate() {
+    $("#deviceslist").find("a[href='#" + $("body").data.selecteddevice + "']").click();
+}
+
+function pauseLiveUpdate() {
+    $("body").data.liveupdate = false;
+    $("#playstate").hide();
+    $("#pausestate").show();
 }
 
 function doView(view, json, callback) {

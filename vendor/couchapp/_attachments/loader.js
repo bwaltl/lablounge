@@ -16,6 +16,7 @@ couchapp_load([
   "vendor/couchapp/jquery.mustache.js",
   "vendor/couchapp/jquery.evently.js",
   "vendor/couchapp/dygraph-combined.js",
+  "vendor/couchapp/dygraph-extra.js",
   "vendor/couchapp/moment.min.js",
   "vendor/couchapp/json2.js"
 ]);
